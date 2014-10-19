@@ -1,0 +1,64 @@
+source 'https://rubygems.org'
+ruby '<%= Railsqs::RUBY_VERSION %>'
+
+def darwin_only(require_as)
+  RUBY_PLATFORM.include?('darwin') && require_as
+end
+
+def linux_only(require_as)
+  RUBY_PLATFORM.include?('linux') && require_as
+end
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bourbon', '~> 3.2.1'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'email_validator'
+gem 'font-awesome-rails'
+gem 'jquery-rails', '~> 4.0.0.beta2'
+gem 'jbuilder', '~> 2.0'
+gem 'kaminari'
+gem 'neat', '~> 1.5.1'
+gem 'normalize-rails', '~> 3.0.0'
+gem 'pg'
+gem 'puma'
+gem 'rack-timeout'
+gem 'rails', '<%= Railsqs::RAILS_VERSION %>'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.2'
+gem 'recipient_interceptor'
+gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'simple_form'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
+
+group :development, :test do
+  gem 'awesome_print'
+  gem 'byebug'
+  gem 'capybara'
+  gem 'ffaker'
+  gem 'growl',      require: darwin_only('growl')
+  gem 'guard'
+  gem 'guard-spinach'
+  gem 'launchy'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'rb-fsevent', require: darwin_only('rb-fsevent')
+  gem 'rb-inotify', require: linux_only('rb-inotify')
+  gem 'spinach'
+  gem 'spring-commands-spinach'
+  gem 'spring'  
+  gem 'web-console', '~> 2.0.0.beta4'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'poltergeist'
+  gem 'timecop'
+  gem 'webmock'
+end
+
+group :staging, :production do
+
+end
+
+
+
