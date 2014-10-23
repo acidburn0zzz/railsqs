@@ -32,6 +32,7 @@ module Railsqs
       invoke :setup_homepage
       invoke :setup_git
       invoke :setup_database
+      invoke :setup_guard
       invoke :outro
     end
 

@@ -187,7 +187,8 @@ end
     end
 
     def generate_spinach
-
+      run 'mkdir -p features/support'
+      copy_file 'env.rb', 'features/support/env.rb'
     end
 
     def setup_puma
@@ -219,6 +220,10 @@ end
     def setup_homepage
       bundle_command 'exec rails g controller Homepages show'
       replace_in_file 'config/routes.rb', "get 'homepages/show'", "root 'homepages#show'"
+    end
+
+    def setup_gurad
+      copy_file 'Guardfile', 'Guardfile'
     end
 
     def init_git

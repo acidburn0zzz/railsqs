@@ -23,12 +23,11 @@ gem 'pg'
 gem 'puma'
 gem 'rack-timeout'
 gem 'rails', '<%= Railsqs::RAILS_VERSION %>'
-gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.2'
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'simple_form'
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'envied'
 
 group :development, :test do
   gem 'awesome_print'
@@ -38,12 +37,14 @@ group :development, :test do
   gem 'growl',      require: darwin_only('growl')
   gem 'guard'
   gem 'guard-spinach'
+  gem 'guard-minitest'
   gem 'launchy'
   gem 'pry'
   gem 'pry-rails'
   gem 'rb-fsevent', require: darwin_only('rb-fsevent')
   gem 'rb-inotify', require: linux_only('rb-inotify')
   gem 'spinach'
+  gem 'spinach-rails'
   gem 'spring-commands-spinach'
   gem 'spring'  
   gem 'web-console', '~> 2.0.0.beta4'
