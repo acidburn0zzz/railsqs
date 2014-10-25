@@ -222,7 +222,7 @@ end
       replace_in_file 'config/routes.rb', "get 'homepages/show'", "root 'homepages#show'"
     end
 
-    def setup_gurad
+    def setup_guard
       copy_file 'Guardfile', 'Guardfile'
     end
 
